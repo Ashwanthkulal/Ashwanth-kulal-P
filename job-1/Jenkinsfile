@@ -1,0 +1,18 @@
+pipeline{
+    agent any
+    
+    stages{
+        stage('git checkout'){
+            steps{
+                git branch: 'jenkins', url: 'https://github.com/Ashwanthkulal/Ashwanth-kulal-P.git'
+            }
+        }
+
+        stage('build'){
+            steps{
+                echo "building project."
+
+            }
+        }
+    }
+}
