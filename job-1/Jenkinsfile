@@ -4,7 +4,7 @@ pipeline{
         maven 'Maven'
         jdk 'Java-11'
     }
-    
+
     stages{
         stage('git checkout'){
             steps{
@@ -22,7 +22,7 @@ pipeline{
         stage('Maven build'){
             steps{
                 sh 'mvn clean install'
-
+                
             }
         }
     }
