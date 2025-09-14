@@ -1,5 +1,9 @@
 pipeline{
     agent any
+    tools {
+        maven 'Maven'
+        jdk 'Java-11'
+    }
     
     stages{
         stage('git checkout'){
@@ -8,9 +12,15 @@ pipeline{
             }
         }
 
-        stage('build'){
+        stage('Maven clean'){
             steps{
-                echo "building project."
+                sh 'mvn clean'
+
+            }
+        }
+        stage('Maven build'){
+            steps{
+                sh 'mvn build'
 
             }
         }
